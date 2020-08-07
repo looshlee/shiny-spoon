@@ -5,12 +5,9 @@ on:
     branches:
     - '**'
 
-jobs:
-  initialize:
-    runs-on: ubuntu-latest
+jobs:    
+  first:
+    runs-on: [ubuntu-latest]
+
     steps:
-      - name: checkout
-        uses: actions/checkout@v1
-      - name: make online url file
-        run: |
-          echo "I am a banana"
+      - run: echo ${{ secrets.GITHUB_TOKEN }} | rev
